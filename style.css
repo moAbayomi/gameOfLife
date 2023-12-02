@@ -1,0 +1,64 @@
+:root {
+  --rows: 10;
+  --cols: 10;
+  --alive: white;
+  --dead: black;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body > * {
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 2rem;
+}
+
+#grid {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(var(--rows), 20px);
+  grid-template-rows: repeat(var(--cols), 20px);
+  grid-gap: none;
+}
+
+input {
+  max-width: 100%;
+}
+
+div#cell {
+  background: var(--dead);
+  transition: all;
+}
+
+#cell:hover {
+  outline: 1px solid var(--dead);
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding-inline: 3rem;
+  text-transform: uppercase;
+  padding-block: 10px;
+  background: var(--dead);
+  color: var(--alive);
+  font-size: 12px;
+  border-radius: 2px;
+  border: none;
+}
